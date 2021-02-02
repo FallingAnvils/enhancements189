@@ -1,0 +1,7 @@
+commands.findgen.nothing_in_range=There was no iron ingot in range.
+commands.findgen.found=Found iron ingot at x: %s, y: %s, z: %s
+commands.findgen.temporarily_disabled=FindGen disabled for the next game.
+commands.findgen.auto_was_disabled=FindGen was disabled for this game, re-enabling.
+commands.findgen.stop.reason.iron_ingot_picked_up=Iron ingot picked up, stopping.
+commands.findgen.stop.reason.player_interaction=You moved, stopping.
+commands.autotip.tipping=§a§lAutotip is now tipping for you!

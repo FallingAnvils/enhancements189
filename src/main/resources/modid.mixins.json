@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.fallinganvils.enhancements189.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "InGameHudMixin",
+    "ClientPlayerEntityMixin",
+    "MinecraftClientMixin",
+    "PlayerInventoryMixin",
+    "ChatHudMixin",
+    "KeyBindingMixin",
+    "TitleScreenMixin",
+    "ClientLoginNetworkHandlerMixin",
+    "ClientConnectionMixin",
+    "RealmsBridgeMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
