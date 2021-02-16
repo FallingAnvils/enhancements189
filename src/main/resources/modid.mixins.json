@@ -15,7 +15,8 @@
     "TitleScreenMixin",
     "ClientLoginNetworkHandlerMixin",
     "ClientConnectionMixin",
-    "RealmsBridgeMixin"
+    "RealmsBridgeMixin",
+    "TextRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

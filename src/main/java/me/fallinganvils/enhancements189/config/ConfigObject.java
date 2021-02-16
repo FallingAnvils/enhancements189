@@ -3,8 +3,6 @@ package me.fallinganvils.enhancements189.config;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
-import net.minecraft.block.AbstractBlockState;
-import net.minecraft.client.util.Window;
 
 import java.io.File;
 import java.io.FileReader;
@@ -13,6 +11,9 @@ import java.io.IOException;
 
 public class ConfigObject {
     public static final String CONFIG_LOCATION = "config/enhancements189.json";
+    
+    @SerializedName("disable_text_obfuscation")
+    public boolean textObfuscationDisabled = true;
     
     @SerializedName("enable_autogg")
     public boolean autoGGEnabled = true;
