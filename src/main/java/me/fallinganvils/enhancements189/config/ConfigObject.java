@@ -56,7 +56,8 @@ public class ConfigObject {
 
     @SerializedName("find_gen_patterns")
     public String[] findGenPatterns = {
-            "^ *Protect your bed and destroy the enemy beds\\. *$"
+            "^ *Protect your bed and destroy the enemy beds\\. *$",
+            "^ *All generators are maxed! Your bed has three\\. *$"
     };
 
     @SerializedName("title_scale_factor")
