@@ -54,8 +54,10 @@ public class ConfigObject {
     @SerializedName("auto_find_gen")
     public boolean doAutoFindGen = true;
 
-    @SerializedName("find_gen_magic_message")
-    public String findGenMagic = "Protect your bed and destroy the enemy beds.";
+    @SerializedName("find_gen_patterns")
+    public String[] findGenPatterns = {
+            "^ *Protect your bed and destroy the enemy beds\\. *$"
+    };
 
     @SerializedName("title_scale_factor")
     public float titleScaleFactor = 0.5F;
