@@ -13,8 +13,9 @@ public class EnhancementsMod implements ModInitializer {
 		System.out.println("Initializing config (Working directory: " + System.getProperty("user.dir") + ")");
 		CONFIG = ConfigObject.setupConfig();
 		System.out.println("Done initializing config");
-		System.out.println("Compiling AutoGG patterns");
+		System.out.println("Compiling patterns");
 		AUTOGG_HANDLER.compilePatterns();
+		FINDGEN_HANDLER.compilePatterns();
 		System.out.println("Done compiling patterns");
 	}
 

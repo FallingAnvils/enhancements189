@@ -10,6 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Tickable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import java.util.regex.Pattern;
 
 public class WalkToIronHandler implements Tickable {
 
@@ -17,7 +18,18 @@ public class WalkToIronHandler implements Tickable {
     private static final int DELAY_INITIAL = 10;
     private static final int DELAY_REPEAT = 10;
 
+    private Pattern[] compiledPatterns;
 
+    public void compilePatterns() {
+        String[] patterns = EnhancementsMod.CONFIG.findGenPatterns;
+
+        compiledPatterns = new Pattern[patterns.length];
+
+        for(int i = 0; i < patterns.length; ++i) {
+            compiledPatterns[i] = Pattern.compile(patterns[i]);
+        }
+    }
+    
     public class PresserIndex { 
         public static final int FORWARDS = 0, BACKWARDS = 1, LEFT = 2, RIGHT = 3;
     }
@@ -59,13 +71,15 @@ public class WalkToIronHandler implements Tickable {
 
     // called when the client receives a message from the server
     public void receivedChatMessage(Text msg) {
-        if(EnhancementsMod.CONFIG.doAutoFindGen) {
-            if(msg.getString().trim().equals(EnhancementsMod.CONFIG.findGenMagic)) {
-                if(!tempDisabled) {
-                    joinGameTick = EnhancementsMod.CONFIG.findGenAutoInitialDelay;
-                } else {
-                    MinecraftClient.getInstance().player.addMessage(new TranslatableText("commands.findgen.auto_was_disabled"));
-                    tempDisabled = false;
+        if(compiledPatterns != null && EnhancementsMod.CONFIG.doAutoFindGen) {
+            for(Pattern pattern : compiledPatterns) {
+                if(pattern.asPredicate().test(msg.getString())) {
+                    if (!tempDisabled) {
+                        joinGameTick = EnhancementsMod.CONFIG.findGenAutoInitialDelay;
+                    } else {
+                        MinecraftClient.getInstance().player.addMessage(new TranslatableText("commands.findgen.auto_was_disabled"));
+                        tempDisabled = false;
+                    }
                 }
             }
         }
