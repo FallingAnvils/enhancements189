@@ -12,6 +12,15 @@ import java.io.IOException;
 public class ConfigObject {
     public static final String CONFIG_LOCATION = "config/enhancements189.json";
     
+    @SerializedName("enable_chat_filter")
+    public boolean chatFilterEnabled = false;
+    
+    @SerializedName("chat_filter_patterns")
+    public String[] chatFilterPatterns = {
+            "^.*\\u00a7[b6a7](\\[(MV|VI)P((\\u00a7[c62aedf924357801])?\\+{0,2}\\u00a7[b6a])?\\] )?[a-zA-Z0-9_]{3,16}(\\u00a7[7fr]){3}: .+$",
+            "^(\\u00a7r \\u00a7b>\\u00a7c>\\u00a7a>\\u00a7r )?\\u00a7r\\u00a7[b6]\\[(MV|VI)P\\u00a7[c62aedf924357801]\\+{1,2}\\u00a7[b6]\\] [a-zA-Z0-9_]{3,16}\\u00a7f \\u00a76joined the lobby!.+$"
+    };
+    
     @SerializedName("disable_text_obfuscation")
     public boolean textObfuscationDisabled = true;
     

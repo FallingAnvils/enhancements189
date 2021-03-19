@@ -10,9 +10,11 @@ import net.minecraft.text.Text;
 
 @Mixin(ChatHud.class)
 public class ChatHudMixin {
-    @Inject(at = @At("HEAD"), method="addMessage(Lnet/minecraft/text/Text;IIZ)V")
+    @Inject(at = @At("HEAD"), method="addMessage(Lnet/minecraft/text/Text;IIZ)V", cancellable = true)
     public void onChatMessage(Text text, int messageId, int timestamp, boolean bl, CallbackInfo info) {
         EnhancementsMod.FINDGEN_HANDLER.receivedChatMessage(text);
         EnhancementsMod.AUTOGG_HANDLER.receivedChatMessage(text);
+        // give the chat filter the callbackinfo so it can cancel if it wants
+        EnhancementsMod.CHATFILTER_HANDLER.receivedChatMessage(text, info);
     }
 }

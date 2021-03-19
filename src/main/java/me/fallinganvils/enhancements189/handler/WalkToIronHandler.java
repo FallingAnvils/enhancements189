@@ -72,8 +72,9 @@ public class WalkToIronHandler implements Tickable {
     // called when the client receives a message from the server
     public void receivedChatMessage(Text msg) {
         if(compiledPatterns != null && EnhancementsMod.CONFIG.doAutoFindGen) {
+            String msgStr = msg.getString();
             for(Pattern pattern : compiledPatterns) {
-                if(pattern.asPredicate().test(msg.getString())) {
+                if(pattern.asPredicate().test(msgStr)) {
                     if (!tempDisabled) {
                         joinGameTick = EnhancementsMod.CONFIG.findGenAutoInitialDelay;
                     } else {

@@ -4,6 +4,7 @@ import me.fallinganvils.enhancements189.command.WalkToIronCommand;
 import me.fallinganvils.enhancements189.config.ConfigObject;
 import me.fallinganvils.enhancements189.handler.AutoGGHandler;
 import me.fallinganvils.enhancements189.handler.AutoTipHandler;
+import me.fallinganvils.enhancements189.handler.ChatFilterHandler;
 import me.fallinganvils.enhancements189.handler.WalkToIronHandler;
 import net.fabricmc.api.ModInitializer;
 
@@ -16,6 +17,7 @@ public class EnhancementsMod implements ModInitializer {
 		System.out.println("Compiling patterns");
 		AUTOGG_HANDLER.compilePatterns();
 		FINDGEN_HANDLER.compilePatterns();
+		CHATFILTER_HANDLER.compilePatterns();
 		System.out.println("Done compiling patterns");
 	}
 
@@ -26,6 +28,7 @@ public class EnhancementsMod implements ModInitializer {
 	public static final WalkToIronHandler FINDGEN_HANDLER = new WalkToIronHandler();
 	public static final AutoTipHandler AUTOTIP_HANDLER = new AutoTipHandler();
 	public static final AutoGGHandler AUTOGG_HANDLER = new AutoGGHandler();
+	public static final ChatFilterHandler CHATFILTER_HANDLER = new ChatFilterHandler();
 	
 	public static boolean isOnHypixel = false;
 }
