@@ -1,5 +1,6 @@
 package me.fallinganvils.enhancements189;
 
+import me.fallinganvils.enhancements189.command.ConfigCommand;
 import me.fallinganvils.enhancements189.command.WalkToIronCommand;
 import me.fallinganvils.enhancements189.config.ConfigObject;
 import me.fallinganvils.enhancements189.handler.AutoGGHandler;
@@ -29,6 +30,7 @@ public class EnhancementsMod implements ModInitializer {
 	public static final AutoTipHandler AUTOTIP_HANDLER = new AutoTipHandler();
 	public static final AutoGGHandler AUTOGG_HANDLER = new AutoGGHandler();
 	public static final ChatFilterHandler CHATFILTER_HANDLER = new ChatFilterHandler();
-	
+	public static final ConfigCommand CONFIG_COMMAND = new ConfigCommand(ConfigObject.class);
+
 	public static boolean isOnHypixel = false;
 }

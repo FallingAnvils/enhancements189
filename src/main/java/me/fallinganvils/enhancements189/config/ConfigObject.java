@@ -113,6 +113,24 @@ public class ConfigObject {
         return cfg;
     }
 
+    public void saveConfig() throws IOException {
+        this.saveConfig(CONFIG_LOCATION);
+    }
+
+    private void saveConfig(String location) throws IOException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        File f = new File(location);
+
+        f.getParentFile().mkdirs();
+        if(!f.exists()) {
+            f.createNewFile();
+        }
+
+        FileWriter fw = new FileWriter(f);
+        fw.write(gson.toJson(this));
+        fw.close();
+    }
+
     public ConfigObject() {  }
 
 }
