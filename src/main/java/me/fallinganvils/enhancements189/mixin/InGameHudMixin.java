@@ -22,8 +22,6 @@ public class InGameHudMixin {
     private int drawDifferently(TextRenderer instance, String text, float x, float y, int color, boolean shadow) {
         Window window = new Window(MinecraftClient.getInstance());
 
-        float howFarDown = 1F;
-
         float yTranslateFactor = 0F;
         if(y == -10) { // subtitle
             yTranslateFactor = -(window.getScaledHeight() / (16.0F * EnhancementsMod.CONFIG.titleHowFarDown));
