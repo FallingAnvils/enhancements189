@@ -16,7 +16,8 @@
     "ClientLoginNetworkHandlerMixin",
     "ClientConnectionMixin",
     "RealmsBridgeMixin",
-    "TextRendererMixin"
+    "TextRendererMixin",
+    "SoundSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

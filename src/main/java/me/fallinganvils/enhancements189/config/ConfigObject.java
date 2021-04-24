@@ -11,7 +11,10 @@ import java.io.IOException;
 
 public class ConfigObject {
     public static final String CONFIG_LOCATION = "config/enhancements189.json";
-    
+
+    @SerializedName("disable_music_in_housing")
+    public boolean disableMusicInHousing = false;
+
     @SerializedName("enable_chat_filter")
     public boolean chatFilterEnabled = false;
     
