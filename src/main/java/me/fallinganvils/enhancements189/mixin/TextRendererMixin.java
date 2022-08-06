@@ -14,19 +14,19 @@ public class TextRendererMixin {
 
     // this is the boolean that controls whether text is obfuscated or not
     @Shadow
-    private boolean field_2832;
+    private boolean field_1158;
 
-    @Redirect(method = "method_2395",
-            at = @At(value = "FIELD", target = "Lnet/minecraft/client/font/TextRenderer;field_2832:Z"),
+    @Redirect(method = "method_959",
+            at = @At(value = "FIELD", target = "Lnet/minecraft/client/font/TextRenderer;field_1158:Z"),
             // vaguely where the obfuscation happens
             slice = @Slice(
-                    from = @At(value = "FIELD", opcode = Opcodes.GETFIELD, target = "Lnet/minecraft/client/font/TextRenderer;field_2832:Z"),
-                    to = @At(value = "FIELD", opcode = Opcodes.GETFIELD, target = "Lnet/minecraft/client/font/TextRenderer;field_2825:Z")
+                    from = @At(value = "FIELD", opcode = Opcodes.GETFIELD, target = "Lnet/minecraft/client/font/TextRenderer;field_1158:Z"),
+                    to = @At(value = "FIELD", opcode = Opcodes.GETFIELD, target = "Lnet/minecraft/client/font/TextRenderer;field_1151:Z")
             )
     )
     public boolean shouldObfuscate(TextRenderer _this) {
         if(EnhancementsMod.CONFIG.textObfuscationDisabled) return false;
         // forward the original value
-        else return field_2832;
+        else return field_1158;
     }
 }

@@ -21,5 +21,6 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "refmap": "enhancements189-refmap.json"
 }

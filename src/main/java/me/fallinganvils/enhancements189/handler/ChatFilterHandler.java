@@ -1,8 +1,6 @@
 package me.fallinganvils.enhancements189.handler;
 
 import me.fallinganvils.enhancements189.EnhancementsMod;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 

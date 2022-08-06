@@ -1,7 +1,7 @@
 package me.fallinganvils.enhancements189.mixin;
 
 import me.fallinganvils.enhancements189.EnhancementsMod;
-import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.entity.player.ClientPlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

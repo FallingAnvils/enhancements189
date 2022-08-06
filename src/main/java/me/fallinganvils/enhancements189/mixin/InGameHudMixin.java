@@ -24,9 +24,9 @@ public class InGameHudMixin {
 
         float yTranslateFactor = 0F;
         if(y == -10) { // subtitle
-            yTranslateFactor = -(window.getScaledHeight() / (16.0F * EnhancementsMod.CONFIG.titleHowFarDown));
+            yTranslateFactor = -((float)window.getScaledHeight() / (16.0F * EnhancementsMod.CONFIG.titleHowFarDown));
         } else if(y == 5) { // normal title
-            yTranslateFactor = -(window.getScaledHeight() / (8.0F * EnhancementsMod.CONFIG.titleHowFarDown)) + 12.5F;
+            yTranslateFactor = -((float)window.getScaledHeight() / (8.0F * EnhancementsMod.CONFIG.titleHowFarDown)) + 12.5F;
         }
 
         //float yTranslateFactor = -(window.getScaledHeight() / y == -10 ? 4.0F : 2.0F) - 25F;

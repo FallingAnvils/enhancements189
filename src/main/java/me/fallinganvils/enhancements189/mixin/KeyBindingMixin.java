@@ -4,7 +4,7 @@ import me.fallinganvils.enhancements189.EnhancementsMod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.GameOptions;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.util.IntObjectStorage;
+import net.minecraft.util.collection.IntObjectStorage;
 import org.spongepowered.asm.mixin.Mixin;
 import net.minecraft.client.options.KeyBinding;
 import org.spongepowered.asm.mixin.gen.Accessor;
