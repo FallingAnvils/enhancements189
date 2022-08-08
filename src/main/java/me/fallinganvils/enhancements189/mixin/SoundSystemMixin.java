@@ -16,22 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class SoundSystemMixin {
     @Inject(at = @At("HEAD"), method = "play(Lnet/minecraft/client/sound/SoundInstance;)V", cancellable = true)
     public void play(SoundInstance instance, CallbackInfo info) {
-        if(EnhancementsMod.CONFIG.disableMusicInHousing) {
-            MinecraftClient client = MinecraftClient.getInstance();
-            if(client.world != null) {
-                Scoreboard scoreboard = client.world.getScoreboard();
-                if(scoreboard != null) {
-                    ScoreboardObjective obj = scoreboard.getObjectiveForSlot(1);
-                    if(obj != null) {
-                        String displayName = obj.getDisplayName();
-                        if(displayName.contains("HOUSING")) {
-                            if(instance.getIdentifier().getPath().contains("note")) {
-                                info.cancel();
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        EnhancementsMod.NO_MUSIC_IN_HOUSING_HANDLER.playSound(instance, info);
     }
 }

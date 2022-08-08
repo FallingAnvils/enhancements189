@@ -27,7 +27,8 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.4"
+    "fabricloader": ">=0.7.4",
+    "legacy-fabric-api": ">=1.4.0"
   },
   "suggests": {
     "flamingo": "*"

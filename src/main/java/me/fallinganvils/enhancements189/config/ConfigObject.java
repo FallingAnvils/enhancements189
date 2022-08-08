@@ -79,6 +79,12 @@ public class ConfigObject {
     @SerializedName("title_how_far_down")
     public float titleHowFarDown = 1.0F;
 
+    @SerializedName("zoom_fov")
+    public int zoomFov = 30;
+
+    @SerializedName("zoom_smooth")
+    public boolean zoomSmooth = true;
+
     public static ConfigObject setupConfig() {
         ConfigObject cfg = new ConfigObject();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

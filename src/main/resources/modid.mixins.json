@@ -17,7 +17,8 @@
     "ClientConnectionMixin",
     "RealmsBridgeMixin",
     "TextRendererMixin",
-    "SoundSystemMixin"
+    "SoundSystemMixin",
+    "ClientPlayNetworkHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

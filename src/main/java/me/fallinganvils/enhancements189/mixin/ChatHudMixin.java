@@ -14,7 +14,8 @@ public class ChatHudMixin {
     public void onChatMessage(Text text, int messageId, int timestamp, boolean bl, CallbackInfo info) {
         EnhancementsMod.FINDGEN_HANDLER.receivedChatMessage(text);
         EnhancementsMod.AUTOGG_HANDLER.receivedChatMessage(text);
-        // give the chat filter the callbackinfo so it can cancel if it wants
+        // give certain things the callbackinfo so they can cancel if they want
         EnhancementsMod.CHATFILTER_HANDLER.receivedChatMessage(text, info);
+        EnhancementsMod.GAME_SPECIFIC_HANDLER.receivedChatMessage(text, info);
     }
 }
