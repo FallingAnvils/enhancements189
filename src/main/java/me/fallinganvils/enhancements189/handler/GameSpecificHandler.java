@@ -37,17 +37,17 @@ public class GameSpecificHandler {
         System.out.println("Running world change tasks");
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.player != null) {
-            client.player.sendChatMessage("/locraw");
             this.autoLocRaw = true;
+            client.player.sendChatMessage("/locraw");
         }
     }
 
     boolean autoLocRaw = false;
     public void receivedChatMessage(Text text, CallbackInfo info) {
         if(!autoLocRaw) return;
-        autoLocRaw = false;
         String str = text.asString();
         if(str.startsWith("{") && str.endsWith("}")) {
+            autoLocRaw = false;
             System.out.println("Matched json " + str);
             info.cancel();
             Gson gs = new Gson();

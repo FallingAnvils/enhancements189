@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 // this extends Screen so we get this.buttons, it's abstract so we can do the accessor
 @Mixin(TitleScreen.class)
 public abstract class TitleScreenMixin extends Screen {
-    @Accessor("realmsButton") // realms button
+    @Accessor("realmsButton")
     abstract ButtonWidget getRealmsButton();
 
     @Inject(method = "initWidgetsNormal(II)V", at = @At("TAIL"))

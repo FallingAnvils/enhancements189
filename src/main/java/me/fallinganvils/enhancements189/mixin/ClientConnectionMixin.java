@@ -2,6 +2,8 @@ package me.fallinganvils.enhancements189.mixin;
 
 import io.netty.channel.ChannelHandlerContext;
 import me.fallinganvils.enhancements189.EnhancementsMod;
+import me.fallinganvils.enhancements189.handler.GameSpecificBehavior;
+import me.fallinganvils.enhancements189.util.JsonLocRawOutput;
 import net.minecraft.network.ClientConnection;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
