@@ -85,6 +85,9 @@ public class ConfigObject {
     @SerializedName("zoom_smooth")
     public boolean zoomSmooth = true;
 
+    @SerializedName("enable_name_censor")
+    public boolean enableNameCensor = false;
+
     public static ConfigObject setupConfig() {
         ConfigObject cfg = new ConfigObject();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();

@@ -13,5 +13,6 @@ public class ClientPlayerEntityMixin {
     private void interceptSentChat(String msg, CallbackInfo info) {
         EnhancementsMod.FINDGEN_HANDLER.sentChatMessage(msg, info);
         EnhancementsMod.CONFIG_COMMAND.runCommand(msg, info);
+        EnhancementsMod.REALNAME_COMMAND.runCommand(msg, info);
     }
 }

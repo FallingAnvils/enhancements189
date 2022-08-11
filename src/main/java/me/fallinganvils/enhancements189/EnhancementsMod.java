@@ -1,13 +1,17 @@
 package me.fallinganvils.enhancements189;
 
 import me.fallinganvils.enhancements189.command.ConfigCommand;
+import me.fallinganvils.enhancements189.command.RealNameCommand;
 import me.fallinganvils.enhancements189.command.WalkToIronCommand;
 import me.fallinganvils.enhancements189.config.ConfigObject;
 import me.fallinganvils.enhancements189.handler.AutoGGHandler;
 import me.fallinganvils.enhancements189.handler.AutoTipHandler;
+import me.fallinganvils.enhancements189.handler.CensorNamesHandler;
 import me.fallinganvils.enhancements189.handler.ChatFilterHandler;
 import me.fallinganvils.enhancements189.handler.GameSpecificBehavior;
 import me.fallinganvils.enhancements189.handler.GameSpecificHandler;
+import me.fallinganvils.enhancements189.handler.HoldForPerspectiveHandler;
+import me.fallinganvils.enhancements189.handler.HotbarSlotAltHandler;
 import me.fallinganvils.enhancements189.handler.NoCloudsInDropperHandler;
 import me.fallinganvils.enhancements189.handler.NoMusicInHousingHandler;
 import me.fallinganvils.enhancements189.handler.WalkToIronHandler;
@@ -24,7 +28,7 @@ import java.util.ArrayList;
 
 public class EnhancementsMod implements ModInitializer {
 
-	@Override
+    @Override
 	public void onInitialize() {
 		System.out.println("Initializing config (Working directory: " + System.getProperty("user.dir") + ")");
 		CONFIG = ConfigObject.setupConfig();
@@ -39,6 +43,8 @@ public class EnhancementsMod implements ModInitializer {
 		GAME_SPECIFIC_HANDLERS.add(NO_CLOUDS_IN_DROPPER_HANDLER);
 
 		ZOOM_HANDLER.init();
+		HOLD_FOR_PERSPECTIVE_HANDLER.init();
+		HOTBAR_SLOT_ALT_HANDLER.init();
 	}
 
 	public static ConfigObject CONFIG;
@@ -54,7 +60,11 @@ public class EnhancementsMod implements ModInitializer {
 	public static final NoMusicInHousingHandler NO_MUSIC_IN_HOUSING_HANDLER = new NoMusicInHousingHandler();
 	public static final NoCloudsInDropperHandler NO_CLOUDS_IN_DROPPER_HANDLER = new NoCloudsInDropperHandler();
 	public static final ZoomHandler ZOOM_HANDLER = new ZoomHandler();
+	public static final CensorNamesHandler CENSOR_NAMES_HANDLER = new CensorNamesHandler();
+	public static final HoldForPerspectiveHandler HOLD_FOR_PERSPECTIVE_HANDLER = new HoldForPerspectiveHandler();
+	public static final HotbarSlotAltHandler HOTBAR_SLOT_ALT_HANDLER = new HotbarSlotAltHandler();
 	public static final ConfigCommand CONFIG_COMMAND = new ConfigCommand(ConfigObject.class);
+	public static final RealNameCommand REALNAME_COMMAND = new RealNameCommand();
 
 	public static boolean isOnHypixel = false;
 }

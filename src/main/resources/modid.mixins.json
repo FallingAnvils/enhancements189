@@ -18,7 +18,9 @@
     "RealmsBridgeMixin",
     "TextRendererMixin",
     "SoundSystemMixin",
-    "ClientPlayNetworkHandlerMixin"
+    "ClientPlayNetworkHandlerMixin",
+    "EntityMixin",
+    "PlayerListHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1
