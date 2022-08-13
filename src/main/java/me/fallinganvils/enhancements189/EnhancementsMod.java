@@ -1,6 +1,7 @@
 package me.fallinganvils.enhancements189;
 
 import me.fallinganvils.enhancements189.command.ConfigCommand;
+import me.fallinganvils.enhancements189.command.GammaCommand;
 import me.fallinganvils.enhancements189.command.RealNameCommand;
 import me.fallinganvils.enhancements189.command.WalkToIronCommand;
 import me.fallinganvils.enhancements189.config.ConfigObject;
@@ -19,6 +20,7 @@ import me.fallinganvils.enhancements189.handler.ZoomHandler;
 import me.fallinganvils.enhancements189.util.JsonLocRawOutput;
 import net.fabricmc.api.ModInitializer;
 import net.legacyfabric.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.RunArgs;
 import net.minecraft.client.options.KeyBinding;
 import net.minecraft.client.world.ClientWorld;
@@ -65,6 +67,7 @@ public class EnhancementsMod implements ModInitializer {
 	public static final HotbarSlotAltHandler HOTBAR_SLOT_ALT_HANDLER = new HotbarSlotAltHandler();
 	public static final ConfigCommand CONFIG_COMMAND = new ConfigCommand(ConfigObject.class);
 	public static final RealNameCommand REALNAME_COMMAND = new RealNameCommand();
+	public static final GammaCommand GAMMA_COMMAND = new GammaCommand();
 
 	public static boolean isOnHypixel = false;
 }

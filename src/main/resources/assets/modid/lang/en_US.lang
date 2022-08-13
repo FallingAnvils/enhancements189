@@ -29,3 +29,5 @@ commands.realname.not_enabled=Name censoring is not enabled!
 commands.realname.wrong_arguments=Usage: /realname <name hashes>
 commands.realname.success=§2Real name of %s: %s
 commands.realname.no_matches=§cNo matches found for %s
+commands.gamma.wrong_arguments=Usage: /gamma <decimal gamma>
+commands.gamma.success=Successfully set the gamma to %s.

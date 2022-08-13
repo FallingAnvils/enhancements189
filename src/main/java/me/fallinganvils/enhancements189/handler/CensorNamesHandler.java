@@ -26,8 +26,7 @@ public class CensorNamesHandler {
     private int player_list_update_interval = 500;
 
     public Text receivedChatMessage(Text text) {
-        if(!EnhancementsMod.CONFIG.enableNameCensor
-        || EnhancementsMod.CONFIG.chatFilterEnabled) return text;
+        if(!EnhancementsMod.CONFIG.enableNameCensor) return text;
 
         String goodFormat = text.asFormattedString();
 

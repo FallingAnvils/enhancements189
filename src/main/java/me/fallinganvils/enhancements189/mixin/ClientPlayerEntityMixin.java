@@ -14,5 +14,6 @@ public class ClientPlayerEntityMixin {
         EnhancementsMod.FINDGEN_HANDLER.sentChatMessage(msg, info);
         EnhancementsMod.CONFIG_COMMAND.runCommand(msg, info);
         EnhancementsMod.REALNAME_COMMAND.runCommand(msg, info);
+        EnhancementsMod.GAMMA_COMMAND.runCommand(msg, info);
     }
 }
